@@ -59,7 +59,7 @@ class App extends Component {
     }));
   };
 
-  componentSetStorage() {
+  componentDidMount() {
     const contacts = localStorage.getItem('contacts');
     const parsedContacts = JSON.parse(contacts);
 
