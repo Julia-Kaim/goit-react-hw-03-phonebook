@@ -23,7 +23,7 @@ class App extends Component {
     this.state.contacts.forEach(el => {
       if (el.name.toLowerCase() === normalizedName) {
         alert(`${name} is already in contacts`);
-        isExist = true;
+      
       }
     });
 
