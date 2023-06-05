@@ -19,17 +19,12 @@ class App extends Component {
   addContact = ({ name, number }) => {
     const normalizedName = name.toLowerCase();
 
-    let isExist;
     this.state.contacts.forEach(el => {
       if (el.name.toLowerCase() === normalizedName) {
         alert(`${name} is already in contacts`);
-      
       }
     });
 
-    if (isExist) {
-      return;
-    }
     const contact = {
       id: nanoid(),
       name: name,
@@ -68,7 +63,7 @@ class App extends Component {
     }
   }
 
-  componentDidUpdate(prevState) {
+  componentDidUpdate(_, prevState) {
     if (this.state.contacts !== prevState.contacts) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
